@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/images.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="font-awesome/css/all.css"> -->
+    <!-- <script src="https://kit.fontawesome.com/57caace4b9.js" crossorigin="anonymous"></script> -->
+
+    <title>Bankist</title>
+  </head>
+  <body class="bg-light">
+    <header>
+      <div class="row g-2 px-1 justify-content-between align-items-center">
+        <div class="col-md-2 d-flex order-md-1">
+          <img
+            src="img/images.png"
+            class="img-fluid logo m-auto"
+            width="90px"
+            height="80px"
+            alt=""
+          />
+        </div>
+        <div class="col-md-3 text-center text-muted order-md-0">
+          <h5 class="welcome-text">Good evening, Reslaan</h5>
+        </div>
+
+        <div class="col-md-3 order-md-2">
+          <form action="" class="login-form">
+            <div class="row justify-content-end align-items-center g-2">
+              <div class="col-md-4">
+                <input
+                  type="text"
+                  class="login-user form-control p-1 border-0 rounded-pill text-center"
+                  placeholder="User"
+                />
+              </div>
+              <div class="col-md-4">
+                <input
+                  type="text"
+                  class="login-pin form-control p-1 border-0 rounded-pill text-center"
+                  placeholder="PIN"
+                />
+              </div>
+              <div class="col-md-2 text-center">
+                <a href="#" class="login-btn"><i class="fa fa-arrow-right-long"></i></a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <main class="row app ">
+      <div class="col-md-10 offset-md-1 px-5 py-2 mt-5">
+        <section class="row g-3 pb-4 d-flex justify-content-between">
+          <div class="col-md-4">
+            <h5 class="fw-bold">Current balance</h5>
+            <span class="text-muted date">As of 19/8/2022 6:16 PM</span>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <h2 class="balance">$16,1758.00</h2>
+          </div>
+        </section>
+
+        <section class="row g-2 g-md-4">
+          <!-- ///////////// form inputs ///// -->
+          <div class="col-md-5 order-md-1">
+            <div class="row flex-column g-2 g-md-4">
+              <div class="col">
+                <div class="card operation-transfer border-0 py-3 px-4">
+                  <h5 class="">Transfer money</h5>
+
+                  <form action="">
+                  <div class="row text-center">
+                    <div class="col-md-5 pe-0">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="transfer-to form-control p-1 rounded-3 opacity-50"
+                        />
+                        <small class="fa-xs">Transfer To</small>
+                      </div>
+                    </div>
+                    <div class="col-md-5 pe-0">
+                      <div class="form-group">
+                        <input
+                          type="number"
+                          class="transfer-amount form-control p-1 text-center rounded-3 opacity-50"
+                        />
+                        <small class="fa-xs">Amount</small>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <a href="" class="transfer-btn btn btn-light py-1"
+                        ><i class="fa fa-arrow-right-long"></i
+                      ></a>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card operation-loan border-0 py-3 px-4">
+                  <h5 class="">Request loan</h5>
+
+                  <div class="row text-center">
+                    <div class="col-md-7 pe-0">
+                      <div class="form-group">
+                        <input
+                          type="number"
+                          class="loan-amount form-control p-1 text-center rounded-3 opacity-50"
+                        />
+                        <small class="fa-xs">Amount</small>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <a href="" class=" loan-btn btn btn-light py-1"
+                        ><i class="fa fa-arrow-right-long"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card operation-close border-0 py-3 px-4">
+                  <h5 class="">Close account</h5>
+
+                  <div class="row text-center">
+                    <div class="col-md-5 pe-0">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="close-user form-control text-center p-1 rounded-3 opacity-50"
+                        />
+                        <small class="fa-xs">Confirm user</small>
+                      </div>
+                    </div>
+                    <div class="col-md-5 pe-0">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class=" close-pin form-control text-center p-1 rounded-3 opacity-50"
+                        />
+                        <small class="fa-xs">Confirm PIN</small>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <a href="" class="close-btn btn btn-light py-1"
+                        ><i class="fa fa-arrow-right-long"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- movements section -->
+
+          <div class="movements col-md-7 order-md-0 bg-white p-0 pt-3 rounded">
+            <div class="movment-item row justify-content-between px-3 pt-2">
+              <div class="col-md-4">
+                <span class="deposit rounded-pill px-2 me-2 text-light"
+                  ><small> 9 Deposit</small>
+                </span>
+                <small>tody</small>
+              </div>
+              <div class="col-md-3">
+                <span class="h4">$15,154</span>
+              </div>
+            </div>
+            <hr />
+            <div class="row justify-content-between px-3 pt-2">
+              <div class="col-md-4">
+                <span class="withdrawal rounded-pill px-2 me-2 text-light"
+                  ><small> 9 withdrawal</small>
+                </span>
+                <small>tody</small>
+              </div>
+              <div class="col-md-3">
+                <span class="h4">$15,154</span>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </section>
+        <footer class="row py-4">
+          <div class="col-md-7">
+            <div class="row justify-content-between align-items-center">
+              <div class="col-md-3">
+                <small>IN</small>
+                <span class="h4 text-success sum-in">$25,124</span>
+              </div>
+              <div class="col-md-3">
+                <small>OUT</small>
+                <span class="h4 text-danger sum-out">$25,124</span>
+              </div>
+              <div class="col-md-4">
+                <small>INTEREST</small>
+                <span class="h4 text-primary sum-interest">$25,124</span>
+              </div>
+              <div class="col-md-2">
+                <small>
+                    <a href=""class="sort-btn   nav-link "><i class="fas fa-arrow-down-long fa-xs "> sort</i> 
+</a>
+                </small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 text-md-end">
+            <small
+              >You will be logged out in
+              <strong class="timer text-danger">04:45</strong></small
+            >
+          </div>
+        </footer>
+      </div>
+    </main>
+    <script src="js/script.js"></script>
+    <script src="js/font-awesome.js" crossorigin="anonymous"></script>
+
+    <!-- <script src="https://kit.fontawesome.com/335fc6dc98.js" crossorigin="anonymous"></script> -->
+  </body>
+</html>

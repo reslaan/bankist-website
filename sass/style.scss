@@ -1,0 +1,48 @@
+
+ $success: #39b385;
+ $danger: #e52a5a;
+ $warning: #ffb003;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+.logo{
+    mix-blend-mode: multiply;
+}
+
+.operation-transfer {
+    background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+  }
+  
+  .operation-loan {
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+  }
+  
+  .operation-close {
+    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  }
+
+  .deposit{
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+
+  }
+
+  .withdrawal{
+    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+
+  }
+
+  .app{
+    opacity: 0;
+  }
+
+  .movements{
+    max-height: 65vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+ 
