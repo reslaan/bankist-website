@@ -71,7 +71,7 @@ const displayMovements = function(account , sort = false){
 
      const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
-     labelDate.textContent = date;
+     labelDate.textContent =    `On ${date}`;
 
      const movs = sort ? account.movements.slice().sort((a,b) => a - b) : account.movements;
 
