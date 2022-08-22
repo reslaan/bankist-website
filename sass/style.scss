@@ -9,6 +9,16 @@
 body{
     font-family: "Poppins", sans-serif;
 }
+.app{
+  opacity: 0;
+  transition: all .6s;
+}
+
+.movements{
+  max-height: 65vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 .logo{
     mix-blend-mode: multiply;
 }
@@ -35,14 +45,6 @@ body{
 
   }
 
-  .app{
-    opacity: 0;
-  }
 
-  .movements{
-    max-height: 65vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
 
  

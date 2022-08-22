@@ -10926,6 +10926,17 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.app {
+  opacity: 0;
+  transition: all 0.6s;
+}
+
+.movements {
+  max-height: 65vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .logo {
   mix-blend-mode: multiply;
 }
@@ -10948,14 +10959,4 @@ body {
 
 .withdrawal {
   background-image: linear-gradient(to top left, #e52a5a, #ff585f);
-}
-
-.app {
-  opacity: 0;
-}
-
-.movements {
-  max-height: 65vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }/*# sourceMappingURL=style.css.map */

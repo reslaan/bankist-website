@@ -71,6 +71,8 @@ const displayMovements = function(account , sort = false){
 
      const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
+     labelDate.textContent = date;
+
      const movs = sort ? account.movements.slice().sort((a,b) => a - b) : account.movements;
 
     movs.forEach(function(val,index){
@@ -97,7 +99,7 @@ const displayMovements = function(account , sort = false){
 
 // movements(account1.movements)
 
-labelDate.innerHTML = 'reslan date';
+
 
 
 const createUserName = function(accs){
@@ -229,7 +231,7 @@ btnClose.addEventListener('click', function(e) {
       // delete the account
       accounts.splice(index,1)
       containerApp.style.opacity = 0;
-      labelWelcome.textContent = 'Good Evening'
+      labelWelcome.textContent = 'Login to start..'
 console.log(accounts)      
     }
 
