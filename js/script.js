@@ -63,6 +63,13 @@ const labelTimer = document.querySelector('.timer');
 
 alert('username, pin \nah,   1111\nra,   2222\nok,   3333\nya,   4444')
 
+const formatCur = function(value, locale = 'es-US', currency = 'USD'){
+    return new Intl.NumberFormat(locale,{
+        style: 'currency',
+        currency: currency
+    }).format(value);
+}
+
 const displayMovements = function(account , sort = false){
 
     containerMovements.innerHTML = '';
@@ -88,7 +95,7 @@ const displayMovements = function(account , sort = false){
           <small>${date}</small>
         </div>
         <div class="col-3 text-end">
-          <span class="h4 ">${val}$</span>
+          <span class="h4 ">${formatCur(val)}</span>
         </div>
       </div>
     <hr>
@@ -124,7 +131,8 @@ const calcBalance = account => {
     // initial acc is 0 ;
     const balance = account.movements.reduce((acc, move) => acc + move , 0);
     account.balance = balance;
-    labelBalance.textContent = `${Math.floor(balance)}$`;
+    // labelBalance.textContent = `${balance.toFixed(2)}$`;
+    labelBalance.textContent = `${formatCur(balance)}`;
 }
 
 
@@ -132,14 +140,14 @@ const calcBalance = account => {
 const calcSumIn = movements => {
   const sumIn =   movements.filter(move => move > 0).reduce((acc,move) => acc + move , 0);
   console.log(sumIn);
-   labelSumIn.textContent = `${sumIn}$`;
+   labelSumIn.textContent = `${Math.floor(sumIn)}$`;
 }
 
 //// calc withdrawal 
 const calcSumOut = movements => {
   const sumOut =   movements.filter(move => move < 0).reduce((acc,move) => acc + move , 0);
   console.log(sumOut);
-   labelSumOut.textContent = `${Math.abs(sumOut)}$`;
+   labelSumOut.textContent = `${Math.floor(sumOut)}$`;
 }
 
 //// calc withdrawal 
@@ -161,10 +169,32 @@ const updateUi = account => {
     calcSumInterest(account.movements);
 }
 
+let timer;
+const startLogOutTimer = function() {    
+
+    let time = 4 * 60;
+
+  timer =    setInterval(() => { 
+        const min = String(Math.trunc( time / 60)).padStart(2,0);
+        const sec = String(time % 60).padStart(2,0);
+        labelTimer.textContent =`${min}:${sec}`;
+        time--;
+        if(time === 0) {
+          clearInterval(timer);
+          containerApp.style.opacity = 0;
+          labelWelcome.textContent = 'Login to started';
+        }
+    },1000);
+}
 
 //// login 
 
 let currentAccount ;
+
+// currentAccount = account2;
+// updateUi(currentAccount);
+// containerApp.style.opacity = 1;
+// labelWelcome.textContent = `Welcome back, ${currentAccount.name.split(' ')[0]}`;
 
 btnLogin.addEventListener('click', (e) => {
     e.preventDefault();
@@ -176,7 +206,8 @@ btnLogin.addEventListener('click', (e) => {
         containerApp.style.opacity = 1;
 
         updateUi(currentAccount);
-       
+        clearInterval(timer);
+        startLogOutTimer();
     
 
         labelWelcome.textContent = `Welcome back, ${currentAccount.name.split(' ')[0]}`;
@@ -203,6 +234,8 @@ btnTransfer.addEventListener('click', function(e) {
                 currentAccount.movements.push(-amount)
                 reciverAccount.movements.push(amount);
                 updateUi(currentAccount);
+                clearInterval(timer);
+        startLogOutTimer();
 }
 })
 
@@ -216,7 +249,10 @@ btnLoan.addEventListener('click', function(e) {
     if (amount > 0) {
     currentAccount.movements.push(amount);
 
-    updateUi(currentAccount);}
+    updateUi(currentAccount);
+    clearInterval(timer);
+        startLogOutTimer();
+}
 });
 
 
