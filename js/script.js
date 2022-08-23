@@ -178,12 +178,13 @@ const startLogOutTimer = function() {
         const min = String(Math.trunc( time / 60)).padStart(2,0);
         const sec = String(time % 60).padStart(2,0);
         labelTimer.textContent =`${min}:${sec}`;
-        time--;
+        
         if(time === 0) {
           clearInterval(timer);
           containerApp.style.opacity = 0;
           labelWelcome.textContent = 'Login to started';
         }
+        time--;
     },1000);
 }
 
