@@ -206,6 +206,7 @@ btnLogin.addEventListener('click', (e) => {
         containerApp.style.opacity = 1;
 
         updateUi(currentAccount);
+        if (timer)
         clearInterval(timer);
         startLogOutTimer();
     
