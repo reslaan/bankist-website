@@ -1,50 +1,52 @@
 
- $success: #39b385;
+
+
+ $primary:#5ec576;
  $danger: #e52a5a;
  $warning: #ffb003;
 
 @import "../bootstrap/scss/bootstrap.scss";
 
 
+ 
 body{
     font-family: "Poppins", sans-serif;
 }
-.app{
-  opacity: 0;
-  transition: all .6s;
+
+.navbar{
+  position: static;
+   z-index: 10;
 }
 
-.movements{
-  max-height: 65vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
 .logo{
     mix-blend-mode: multiply;
 }
 
-.operation-transfer {
-    background-image: linear-gradient(to top left, #ffb003, #ffcb03);
-  }
+
+.bg-primary-gradient{
+  background-image: linear-gradient(to top left, #39b385, #5ec576);
+  transform: skew(90deg);
+}
+.blur-img{
+  filter: blur(8px);
+}
+.register-modal{
   
-  .operation-loan {
-    background-image: linear-gradient(to top left, #39b385, #9be15d);
+  background-color: #f3f3f3;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  width: 90%;
+  @media screen and (min-width: 920px) {
+    width: 45%;
   }
-  
-  .operation-close {
-    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
-  }
+//  padding: 5rem 6rem;
+  z-index: 1000;
+  transition: all 0.5s;
+}
 
-  .deposit{
-    background-image: linear-gradient(to top left, #39b385, #9be15d);
-
-  }
-
-  .withdrawal{
-    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
-
-  }
-
-
+.overlay{
+  backdrop-filter: blur(3px);
+  z-index: 100;
+  transition: all .6s;
+}
 
  
