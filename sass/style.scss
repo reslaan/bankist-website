@@ -29,6 +29,7 @@ body{
 }
 .blur-img{
   filter: blur(8px);
+  transition: all .3s;
 }
 .register-modal{
   
@@ -47,6 +48,18 @@ body{
   backdrop-filter: blur(3px);
   z-index: 100;
   transition: all .6s;
+}
+
+.active-tab{
+  margin-top: -11px;
+  transition: all .2s;
+}
+.section{
+  transition: all .9s;
+}
+.section-hidden{
+  opacity: 0;
+  transform: translateY(8rem);
 }
 
  

@@ -28,18 +28,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-between">
           <li class="nav-item pe-2">
-            <a class="nav-link active" aria-current="page" href="#">Features</a>
+            <a class="nav-link active" aria-current="page" href="#section-1">Features</a>
           </li>
           <li class="nav-item pe-2">
-            <a class="nav-link" href="#">Operations</a>
-          </li>
-
-          <li class="nav-item pe-2">
-            <a class="nav-link" href="#">Testimonials</a>
+            <a class="nav-link" href="#section-2">Operations</a>
           </li>
 
           <li class="nav-item pe-2">
-            <a class="open-modal btn btn-primary rounded-pill">Open account</a>
+            <a class="nav-link" href="#section-3">Testimonials</a>
+          </li>
+
+          <li class="nav-item pe-2">
+            <a class="open-modal  btn  btn-primary rounded-pill ">Open account</a>
           </li>
         </ul>
       </div>
@@ -70,8 +70,8 @@
     <hr class="my-5" />
   </section>
 
-  <section class="features" id="section-1">
-    <div class="container">
+  <section class="features section" >
+    <div class="container" id="section-1">
       <br class="d-none d-md-block" />
       <div class="row p-5 m-md-5 justify-content-center">
         <h5 class="text-primary text-uppercase">Features</h5>
@@ -82,7 +82,7 @@
 
       <div class="row g-3 py-2 align-items-center">
         <div class="col-md-6">
-          <img src="img/digital.jpg" class="img-fluid blur-img" alt="" />
+          <img src="img/digital-lazy.jpg" data-src="img/digital.jpg" width="500" class="img-fluid blur-img" alt="" />
         </div>
         <div class="col-md-6 lh-lg px-5">
           <i class="fa fa-tv text-primary bg-primary p-3 rounded-circle bg-opacity-25"></i>
@@ -96,7 +96,7 @@
 
       <div class="row g-3 py-2 align-items-center flex-row-reverse">
         <div class="col-md-6">
-          <img src="img/grow.jpg" class="img-fluid blur-img" alt="" />
+          <img src="img/grow-lazy.jpg" data-src="img/grow.jpg"  width="500" class="img-fluid blur-img" alt="" />
         </div>
         <div class="col-md-6 lh-lg px-5">
           <i class="fa fa-arrow-trend-up text-primary bg-primary p-3 rounded-circle bg-opacity-25"></i>
@@ -110,7 +110,7 @@
 
       <div class="row g-3 py-2 align-items-center">
         <div class="col-md-6">
-          <img src="img/card.jpg" class="img-fluid blur-img" alt="" />
+          <img src="img/card-lazy.jpg" data-src="img/card.jpg" width="500"  class="img-fluid blur-img" alt="" />
         </div>
         <div class="col-md-6 lh-lg px-5">
           <i class="fa fa-credit-card-alt text-primary bg-primary p-3 rounded-circle bg-opacity-25"></i>
@@ -126,8 +126,8 @@
     <hr class="my-5" />
   </section>
 
-  <section class="operation" id="section-2">
-    <div class="container">
+  <section class="operation section" >
+    <div class="container" id="section-2">
       <br class="d-none d-md-block" />
       <div class="row p-5 m-md-5 justify-content-center">
         <h5 class="text-primary text-uppercase">Opreations</h5>
@@ -137,23 +137,26 @@
       </div>
 
       <div class="bg-white position-relative me-3 mb-5">
-        <a href="#"
-          class="btn btn-warning d-none d-md-block rounded-pill p-2 px-3 position-absolute translate-middle-y start-0 ms-5">01
-          Instants transfers</a>
-        <a href="#"
-          class="btn btn-primary d-none d-md-block rounded-pill p-2 px-3 position-absolute translate-middle-y end-50 me-5">02
-          Instants loans</a>
-        <a href="#"
-          class="btn btn-danger d-none d-md-block rounded-pill p-2 px-3 position-absolute translate-middle-y start-50 ms-5">03
-          Instants closing</a>
+        <div class="operations-container ">
+             <button data-tab="1"
+          class="btn btn-warning text-light d-none d-md-block rounded-pill p-2 px-3 position-absolute translate-middle-y start-0 ms-5 operations-tab active-tab">01
+          Instants transfers</button>
+        <button data-tab="2"
+          class="btn btn-primary text-light d-none d-md-block rounded-pill p-2 px-3 position-absolute translate-middle-y end-50 me-5 operations-tab"><span>02</span> 
+          Instants loans</button>
+        <button data-tab="3"
+          class="btn btn-danger text-light d-none d-md-block rounded-pill p-2 px-3 position-absolute translate-middle-y start-50 ms-5 operations-tab">03
+          Instants closing</button>
+        </div>
+     
 
         <br />
         <br />
-        <div class="row g-3 p-md-5 mx-3 justify-content-center align-items-center text-center">
+        <div class="row g-3 p-md-5 mx-3 justify-content-center align-items-center text-center operations-content operations-content-1">
           <div class="col-md-1 align-self-md-start">
             <i class="fa fa-upload fa-2x text-warning bg-warning p-3 rounded-circle bg-opacity-25"></i>
           </div>
-          <div class="col-md-10 lh-lg">
+          <div class="operation-content col-md-10 lh-lg">
             <h4 class="text-uppercase text-md-start ms-md-3">
               Tranfser money to anyone, instantly! No fees, no BS.
             </h4>
@@ -165,14 +168,47 @@
             </p>
           </div>
         </div>
+        <div class="row g-3 p-md-5 mx-3 justify-content-center align-items-center text-center operations-content operations-content-2 d-none">
+          <div class="col-md-1 align-self-md-start">
+            <i class="fa fa-circle-arrow-up fa-2x text-success bg-success p-3 rounded-circle bg-opacity-25"></i>
+          </div>
+          <div class="operation-content col-md-10 lh-lg">
+            <h4 class="text-uppercase text-md-start ms-md-3">
+              Buy a home or make your dreams come true, with instant loans. 
+            </h4>
+            <p class="opacity-75 fw-lighter lh-lg mt-4 text-md-start ms-md-3">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Similique eaque, laudantium reiciendis provident animi
+              accusantium sed hic placeat consectetur eum error, autem dolore
+              quas quisquam?
+            </p>
+          </div>
+        </div>
+        <div class="row g-3 p-md-5 mx-3 justify-content-center align-items-center text-center operations-content operations-content-3 d-none">
+          <div class="col-md-1 align-self-md-start ">
+            <i class="fa fa-circle-xmark fa-2x text-danger bg-danger p-3 rounded-circle bg-opacity-25"></i>
+          </div>
+          <div class="operation-content col-md-10 lh-lg">
+            <h4 class="text-uppercase text-md-start ms-md-3">
+              No longer need your account? No problem! Close it instantly. 
+            </h4>
+            <p class="opacity-75 fw-lighter lh-lg mt-4 text-md-start ms-md-3">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Similique eaque, laudantium reiciendis provident animi
+              accusantium sed hic placeat consectetur eum error, autem dolore
+              quas quisquam?
+            </p>
+          </div>
+        </div>
+
       </div>
       <br />
     </div>
     <hr />
   </section>
 
-  <section class="testimonial" id="section-3" data-bs-spy="scroll" data-bs-smooth-scroll="true" data-bs-target="">
-    <div class="container mb-5">
+  <section class="testimonial section" >
+    <div class="container mb-5" id="section-3">
       <br class="d-none d-md-block" />
       <div class="row p-5 m-md-5 justify-content-center">
         <h5 class="text-primary text-uppercase">Not sure yet?</h5>
@@ -218,7 +254,7 @@
   </section>
 
   <footer class="bg-dark text-light py-5" id="footer">
-    <section class="container py-5">
+    <section class="container section py-5">
       <div class="row g-3 justify-content-center align-items-center text-center flex-column">
         <div class="col-8">
           <h1 class="fw-bold">
@@ -234,7 +270,7 @@
       </div>
     </section>
     <hr />
-    <section class="container p-5">
+    <section class="container section p-5">
       <div class="row flex-column text-center">
         <div class="col">
           <ul class="nav justify-content-center text-light py-4">
