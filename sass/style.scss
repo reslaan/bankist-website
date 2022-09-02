@@ -36,18 +36,19 @@ body{
   background-color: #f3f3f3;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   width: 90%;
+  z-index: 1000;
+  transition: all 0.5s;
   @media screen and (min-width: 920px) {
     width: 45%;
   }
 //  padding: 5rem 6rem;
-  z-index: 1000;
-  transition: all 0.5s;
+ 
 }
 
 .overlay{
   backdrop-filter: blur(3px);
   z-index: 100;
-  transition: all .6s;
+  transition: all 0.5s;
 }
 
 .active-tab{
@@ -61,5 +62,27 @@ body{
   opacity: 0;
   transform: translateY(8rem);
 }
+.slider{
+  min-height: 22rem;
+  position: relative;
+}
+.slide{
+  position: absolute;
+  top:0;
+  right: 0;
+  min-height: max-content;
+  
+  transition: all .5s;
+}
 
- 
+// .slide::before {
+//   content: '\201C';
+//   position: absolute;
+//   top: -5.7rem;
+//   left: -6.8rem;
+//   line-height: 1;
+//   font-size: 20rem;
+//   font-family: inherit;
+//   color: var(--color-primary);
+//   z-index: -1;
+// }

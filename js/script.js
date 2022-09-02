@@ -98,7 +98,7 @@ const imgTarget = document.querySelectorAll('img[data-src]')
 
 const loadImg = function(entries, observer){
   const [entry] = entries;
-console.log(entry.target)
+
   if(!entry.isIntersecting) return;
   entry.target.src = entry.target.dataset.src;
 
@@ -111,7 +111,7 @@ console.log(entry.target)
 
 const imgObserver = new IntersectionObserver(loadImg,{
   root: null,
-  threshold: 0.15,
+  threshold: 0,
 });
 
 imgTarget.forEach(img => {
@@ -147,6 +147,53 @@ btnScrollToSection1.addEventListener("click", function (e) {
   section1.scrollIntoView({behavior: "smooth"});
 });
 
+
+//////////////////////////////////////
+//////////     slider //////////////
+
+const slides = document.querySelectorAll('.slide');
+const btnRight = document.querySelector('.btn-right')
+const btnLeft = document.querySelector('.btn-left')
+
+const slider = document.querySelector('.slider');
+slider.style.transform = 'scale(0.4) translateX (-800px)';
+// 0% , 100% ,200% , 300%
+slides.forEach((s,i) => s.style.transform = `translateX(${100 * i}%)` );
+
+let curSlide = 0;
+const maxSlide = slides.length -1;
+
+const goToSlide = function(slide){
+  slides.forEach((s,i) => s.style.transform = `translateX(${100 * (i - slide)}%)`);
+}
+goToSlide(0)
+
+const nextSlide = function(){
+  if(curSlide === maxSlide)
+  curSlide = 0
+  else
+  curSlide++
+  goToSlide(curSlide)
+
+  
+}
+
+const prevSlide = function(){
+  if(curSlide === 0)
+  curSlide = maxSlide;
+  else
+  curSlide--
+  goToSlide(curSlide)
+}
+
+btnRight.addEventListener('click',function(e){
+  e.preventDefault()
+  nextSlide()
+})
+btnLeft.addEventListener('click',function(e){
+  e.preventDefault()
+  prevSlide()
+})
 // const randomInt = (min,max) => Math.floor(Math.random() * (max - min + 1) + min);
 // const randomColor = () => `rgb(${randomInt(0,255)},${randomInt(0,255)},${randomInt(0,255)})`;
 

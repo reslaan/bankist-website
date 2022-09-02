@@ -10962,7 +10962,7 @@ body {
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
   z-index: 100;
-  transition: all 0.6s;
+  transition: all 0.5s;
 }
 
 .active-tab {
@@ -10977,4 +10977,19 @@ body {
 .section-hidden {
   opacity: 0;
   transform: translateY(8rem);
+}
+
+.slider {
+  min-height: 22rem;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  transition: all 0.5s;
 }/*# sourceMappingURL=style.css.map */
